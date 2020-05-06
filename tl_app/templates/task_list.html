@@ -1,4 +1,4 @@
-{% extends '/base.html'}
+{% extends 'base.html' %}
 
 {% block content %}
     {% for task in tasks %}
@@ -6,7 +6,7 @@
             <div class="task">
                 <p>created date: {{ task.created_date }}</p>
             </div>
-                <h2><a href="">{{ task.task_title }}</a></h2>
+                <h2><a href="{% url 'task_detail' pk=task.pk %}">{{ task.task_title }}</a></h2>
                 <p>{{ task.description|linebreaksbr }}</p>
         </div>
     {% endfor %}
