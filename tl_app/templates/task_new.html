@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>New task</h1>
+    <form action="http://127.0.0.1:8000/task/new/" method="POST">
+        {% csrf_token %}
+        {{ form.as_p}}
+        <button type="submit">Save</button>
+    </form>
+{% endblock %}
